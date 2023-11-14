@@ -9,6 +9,7 @@ const operationDictionary = {
     'subtract' : subtractNumbers,
     'multiply' : multiplyNumbers,
     'divide' : divideNumbers,
+    'equals' : ''
 }
 
 
@@ -55,6 +56,13 @@ function divideNumbers(a,b) {
     return result;
 }
 
+function equals(a,b) {
+    console.log("equals");
+    numToDisplay = previousOperation(parseFloat(a),parseFloat(b));
+    console.log(numToDisplay);
+    return numToDisplay;
+}
+
 function doOp(event) {
     operation = operationDictionary[event.target.value];
     console.log(operation);
@@ -70,11 +78,12 @@ function doOp(event) {
             //if multiple operations are happening in a row
             //display the running total as new operators are hit
             console.log(previousOperation);
-            numToDisplay = previousOperation(parseFloat(previousNum),parseFloat(numToDisplay));
-            displayNumber(); //I believe we need to change this so that you feed the display number in instead of setting it
+            equals(previousNum, numToDisplay);
+            displayNumber();
             setUpOperation(operation);
+            numToDisplay = '';
         } else {
-            console.log("first time add is hit, set up future operation");
+            console.log("first time operation is hit, set up future operation");
             //if not doing a running total
             //set previousOperation to add for future operator button presses
             setUpOperation(operation);
@@ -90,13 +99,6 @@ function setUpOperation(operation) {
     previousOperation = operation;
     previousNum = numToDisplay; 
     clearAfterClick = true
-}
-
-function equals() {
-    if (previousOperation == "add") {
-        addNumber();
-    }
-    previousOperation = "";
 }
 
 document.addEventListener('DOMContentLoaded', () => {
