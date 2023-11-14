@@ -31,11 +31,6 @@ function displayNumber() {
     display.innerText = String(numToDisplay);
     }
 
-function clearDisplay() {
-    numToDisplay = "";
-    displayNumber();
-}
-
 function addNumbers(a,b) {
     result = parseFloat(a) + parseFloat(b);
     return result;
@@ -66,8 +61,14 @@ function equals(a,b) {
 function doOp(event) {
     operation = operationDictionary[event.target.value];
     console.log(operation);
-    //accidental button hit before number input
-    if (numToDisplay == "") {
+    
+    if (previousNum != "") {
+        
+
+    }
+
+
+    if (numToDisplay == "") { //accidental button hit before number input
         //pass
         console.log("numToDisplay blank, nothing happens");
     } else {
@@ -81,7 +82,6 @@ function doOp(event) {
             equals(previousNum, numToDisplay);
             displayNumber();
             setUpOperation(operation);
-            numToDisplay = '';
         } else {
             console.log("first time operation is hit, set up future operation");
             //if not doing a running total
@@ -98,7 +98,7 @@ function setUpOperation(operation) {
     //and set it so the new number appears after you start typing
     previousOperation = operation;
     previousNum = numToDisplay; 
-    clearAfterClick = true
+    numToDisplay = '' //reset numToDisplay so the new number will appear
 }
 
 document.addEventListener('DOMContentLoaded', () => {
