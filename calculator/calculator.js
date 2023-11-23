@@ -59,37 +59,37 @@ function equals(a,b) {
 }
 
 function doOp(event) {
+    //an operation key has been hit
+    //log the operation then check if the operation needs to happen yet
     operation = operationDictionary[event.target.value];
     console.log(operation);
     
-    if (previousNum != "") {
-        
-
-    }
-
-
-    if (numToDisplay == "") { //accidental button hit before number input
-        //pass
-        console.log("numToDisplay blank, nothing happens");
-    } else {
+    if (numToDisplay != "") { 
         console.log("numtodisplay not blank");
-        //check if a different operator has been clicked previously
-        if (previousOperation != "") {
-            console.log("previous operation is not blank, act as equal sign in running total");
-            //if multiple operations are happening in a row
-            //display the running total as new operators are hit
-            console.log(previousOperation);
-            equals(previousNum, numToDisplay);
-            displayNumber();
+        //numToDisplay not blank, something needs to happen
+        if (previousNum = "") {
+            //previousNum is blank, so this is the first input number
+            //save the previous operation for next time
+            //set prevNum
+            //and reset for the new number
             setUpOperation(operation);
         } else {
-            console.log("first time operation is hit, set up future operation");
-            //if not doing a running total
-            //set previousOperation to add for future operator button presses
-            setUpOperation(operation);
+            //if previousNum is not blank, an operation should be happening with the new number
+            if (previousOperation != "") {
+                //check if a different operator has been clicked previously
+                console.log("previous operation is not blank, act as equal sign in running total");
+                //if multiple operations are happening in a row
+                //display the running total as new operators are hit
+                currentNum = numToDisplay;
+                console.log(previousOperation);
+                equals(previousNum, currentNum);
+                displayNumber();
+                setUpOperation(operation);
+            } else {
+                //pass, because this shouldn't be able to happen
+            }
         }
-        
-        
+            
     }
 }
 
