@@ -1,0 +1,46 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+}
+
+#container {
+    width: 95vw;
+    height: 95vh;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.expanding-card {
+    margin: 10px;
+    min-width: 10vw;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 20px;
+}
+
+.active {
+    flex-grow: 1;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    border-radius: 25px;
+        /* not needed for this application, but added for future reference
+        useful for when you include a low res image to simulate lazy loading
+        and shape margin for floating images that want space between the image and text
+        background-repeat: no-repeat;  
+        background-size:  cover; 
+        shape-margin: 0.75rem; */
+}
