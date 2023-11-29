@@ -58,6 +58,31 @@ function equals(a,b) {
     return numToDisplay;
 }
 
+function newOperation() {
+    let runningNum = 5; //save numtodisplay
+    let operationPFT = addNumbers;
+
+    let operaation = function() {
+        return console.log(operationPFT(5,6));
+    }
+    operaation.revealALL = function() {
+        return console.log("runningNum is" + runningNum + "and operation is" + operationPFT)
+    }
+    return operaation;
+}
+
+numToDisplay = 6;
+var thisoperation = newOperation(); 
+thisoperation.revealALL();
+console.log(thisoperation);
+
+function theOperation() {
+    //an operation key has been hit, not equals
+    workingOperation = function() {
+        var savedNumber = 5; 
+        addNumbers(5,5) 
+}}
+
 function doOp(event) {
     //an operation key has been hit
     //log the operation then check if the operation needs to happen yet
@@ -83,22 +108,36 @@ function doOp(event) {
                 currentNum = numToDisplay;
                 console.log(previousOperation);
                 equals(previousNum, currentNum);
-                displayNumber();
-                setUpOperation(operation);
+
             } else {
                 //pass, because this shouldn't be able to happen
             }
         }
             
+    } else {
+        if (currentNum != "") {
+            //previous operations have occured, repeat them
+            equals(previousNum, currentNum);                
+            displayNumber();
+            setUpOperation(operation);
+        } else {
+            //no operations have occured yet, and nothing has been inputted
+           //only one number has been inputted, theyve changed their mind about the operation
+            previousOperation = operation; //only change the previousOperation
+        }
     }
+
 }
 
 function setUpOperation(operation) {
     //when an operation is set, save the current number
     //and set it so the new number appears after you start typing
+    if (operation != "") {
     previousOperation = operation;
+    }     
     previousNum = numToDisplay; 
     numToDisplay = '' //reset numToDisplay so the new number will appear
+    
 }
 
 document.addEventListener('DOMContentLoaded', () => {
