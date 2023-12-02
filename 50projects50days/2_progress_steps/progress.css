@@ -54,10 +54,18 @@ body {
     position: absolute;
     z-index: 1;
     top: 15px;
+
+}
+
+#progress {
+    background-color: var(--progress-bar-color-fill);
+    width: 0%;
+    transition: 0.4s ease;
 }
 
 .active {
     border-color: var(--progress-bar-color-fill);
+    transition: 0.4s ease;
 }
 
 #button-container {

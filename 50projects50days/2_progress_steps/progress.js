@@ -1,7 +1,7 @@
 let activeCircle = 1
 
 const circles = document.querySelectorAll('.circle');
-const line = document.getElementsByClassName('line');
+const line = document.getElementById('progress');
 
 const next = document.getElementById('next');
 const prev = document.getElementById('prev');
@@ -42,7 +42,9 @@ function progress() {
         prev.disabled = false;
         next.disabled = false;
     }
-    
+
+    line.style.width = (activeCircle - 1)/(circles.length - 1) * 100 + '%'
+
 }
 
 progress();
