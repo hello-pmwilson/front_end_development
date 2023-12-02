@@ -25,23 +25,23 @@ body {
 }
 
 #progress-bar {
+    width: 270px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 270px;
+    margin-bottom: 25px;
 }
 
 .circle {
     width: 30px;
     height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--circle-background-color);
     border-radius: 100%;
     border-width: 3px;
     border-color: var(--progress-bar-color-empty);
     border-style: solid;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: var(--number-color);
     position: relative;
     z-index: 2;
@@ -53,8 +53,7 @@ body {
     background-color: var(--progress-bar-color-empty);
     position: absolute;
     z-index: 1;
-    bottom: 0;
-    left:0;
+    top: 15px;
 }
 
 .active {
@@ -62,11 +61,10 @@ body {
 }
 
 #button-container {
+    width: 270px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    width: 270px;
-    height: 100px;
 }
 
 button {
@@ -78,6 +76,8 @@ button {
     border: none;
 }
 
-.button:disabled {
+button:disabled {
     background-color: var(--progress-bar-color-empty);
+    cursor: not-allowed;
+    transform: scale(0.98);
 }

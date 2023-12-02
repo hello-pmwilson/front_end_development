@@ -1,6 +1,7 @@
 let activeCircle = 1
 
 const circles = document.querySelectorAll('.circle');
+const line = document.getElementsByClassName('line');
 
 const next = document.getElementById('next');
 const prev = document.getElementById('prev');
@@ -32,6 +33,19 @@ function progress() {
             circle.classList.remove('active')
         }
     })
+
+    if(activeCircle === 1) {
+        prev.disabled = true;
+    } else if(activeCircle === circles.length) {
+        next.disabled = true;
+    } else {
+        prev.disabled = false;
+        next.disabled = false;
+    }
+    
 }
 
 progress();
+
+
+
