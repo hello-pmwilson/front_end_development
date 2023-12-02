@@ -58,10 +58,14 @@ body {
 }
 
 button {
-    background-color: #3498DB;
+    background-color: var(--progress-bar-color-fill);
     color: white;
     width: 90px;
     height: 30px;
     border-radius: 10px;
     border: none;
+}
+
+.button:disabled {
+    background-color: var(--progress-bar-color-empty);
 }
