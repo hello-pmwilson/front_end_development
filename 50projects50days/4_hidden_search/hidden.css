@@ -6,6 +6,38 @@
 
 body {
     background-color: #765BEE;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#search {
+    display: flex;
+    background-color: #ffffff;
+}
 
+.search-bar {
+    height: 50px;
+    width: 0px;
+    border: none;
+    outline: none;
+    transition: width 0.5s ease, padding 0.5s ease;
+    padding: 0px;
+}
+
+.active {
+    width: 200px;
+    padding: 15px;   
+}
+
+i {
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 0px;
+    padding: 10px;
+}
