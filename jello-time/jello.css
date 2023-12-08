@@ -1,0 +1,31 @@
+#jello {
+    display: flex;
+    position: relative;
+}
+
+.top {
+    width: 100px;
+    height: 100px;
+    background-color: lightcoral;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.bottom {
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 200px solid lightcoral; /* Change the color as needed */
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    transform: translate(-50%);
+}
+
+.jello-arm {
+    height: 300px;
+    width: 300px;
+    position: relative;
+}
