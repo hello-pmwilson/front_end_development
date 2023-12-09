@@ -1,0 +1,23 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EFEDD6;
+}
+
+.wrapper {
+    width: 500px;
+    margin: auto;
+}
+
+.content {
+    background-color: #4682B4;
+    height: 200px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 15%;
+}
