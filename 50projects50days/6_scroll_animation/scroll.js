@@ -59,8 +59,8 @@ function whatSide(current) {
 
 function removeContent(idx) {
     const allContent = document.querySelectorAll('.content');
-    let side = whatSide();
-    idx--    
+    let side = whatSide(idx+1);
+    count--    
     allContent[idx].classList.remove(`show-${side}`);
     setTimeout(function () {
         wrapper.removeChild(allContent[idx]);
