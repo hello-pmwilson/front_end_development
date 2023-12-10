@@ -4,11 +4,17 @@
 
 body {
     background-color: #EFEDD6;
+    overflow-y: scroll;
 }
 
 #wrapper {
     width: 500px;
     margin: auto;
+    padding-bottom: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .content {
@@ -16,6 +22,7 @@ body {
     height: 200px;
     width: 400px;
     margin: 10px;
+    margin-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,8 +32,10 @@ body {
 }
 
 .off-screen-left {
-    position: absolute;
-    left: -100%;
+    position: relative;
+    left: -300%;
+    transition: left 0.5s ease;
+    display: hidden;
 }
 
 .show-left {
@@ -36,8 +45,10 @@ body {
 }
 
 .off-screen-right {
-    position: absolute;
-    right: -100%;
+    position: relative;
+    right: -300%;
+    transition: right 0.5s ease;
+    display: hidden;
 }
 
 .show-right {
