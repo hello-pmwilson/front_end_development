@@ -1,41 +1,41 @@
 const wrapper = document.getElementById('wrapper');
 const startWith = 3;
-var idx = 0;
+var count = 0;
 
 //on load, animate in the starting amount
 for (var i=0; i<startWith; i++) {
     addContent();
 }
 
-window.addEventListener('scroll', () => {
-    let scroll = window.scrollY;
-    desiredCount = Math.floor(scroll/200);
-    currentCount = count-startWith;
-    if (desiredCount > currentCount) {
-        dif = desiredCount - currentCount;
-        for (var i = 0; i < dif; i++) {
-            addContent();
-        }
-    }
-    if (desiredCount < currentCount) {
-        dif = currentCount - desiredCount;
-        for (var i = 0; i < dif; i++) {
-            removeContent();
-        }
-    }
+// window.addEventListener('scroll', () => {
+//     let scroll = window.scrollY;
+//     desiredCount = Math.floor(scroll/200);
+//     currentCount = count-startWith;
+//     if (desiredCount > currentCount) {
+//         dif = desiredCount - currentCount;
+//         for (var i = 0; i < dif; i++) {
+//             addContent();
+//         }
+//     }
+//     if (desiredCount < currentCount) {
+//         dif = currentCount - desiredCount;
+//         for (var i = 0; i < dif; i++) {
+//             removeContent();
+//         }
+//     }
 
 
-})
+// })
 
-function addContent(idx) {
-    idx++
-
+function addContent() {
+    count++
+    let currentCount = count
     const content = document.createElement('div');
     const innerContent = document.createElement('h1');
     innerContent.innerHTML = 'Content'; 
     content.appendChild(innerContent); 
 
-    let side = whatSide(idx);
+    let side = whatSide(currentCount);
     content.classList = `content off-screen-${side}`;
     
     wrapper.appendChild(content);
@@ -46,8 +46,8 @@ function addContent(idx) {
 
 }
 
-function whatSide(idx) {
-    if (idx % 2 === 0) {
+function whatSide(current) {
+    if (current % 2 === 0) {
         //even, come from the left
         return 'left';
     }
