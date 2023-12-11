@@ -1,31 +1,42 @@
+//TO DO: 
+//Make the scroll less clunky by adding in logic to preload in the next content,
+//then set it so you show the next when you scroll so you can scroll smoother
+
 const wrapper = document.getElementById('wrapper');
 const startWith = 3;
 var count = 0;
+console.log('inner height' + window.innerHeight);
+console.log('body offset' + document.body.offsetHeight);
+
 
 //on load, animate in the starting amount
 for (var i=0; i<startWith; i++) {
     addContent();
 }
 
-// window.addEventListener('scroll', () => {
-//     let scroll = window.scrollY;
-//     desiredCount = Math.floor(scroll/200);
-//     currentCount = count-startWith;
-//     if (desiredCount > currentCount) {
-//         dif = desiredCount - currentCount;
-//         for (var i = 0; i < dif; i++) {
-//             addContent();
-//         }
-//     }
-//     if (desiredCount < currentCount) {
-//         dif = currentCount - desiredCount;
-//         for (var i = 0; i < dif; i++) {
-//             removeContent();
-//         }
-//     }
+var referenceElement = document.querySelectorAll('.content')[count-1];
+var referenceTop = referenceElement.offsetTop;
+var referenceBottom = referenceTop + referenceElement.offsetHeight;
+console.log(referenceBottom);
+window.addEventListener('scroll', () => {
 
+    var referenceElement = document.querySelectorAll('.content')[count-1];
+    var referenceTop = referenceElement.offsetTop;
+    var referenceBottom = referenceTop + referenceElement.offsetHeight;
 
-// })
+    let scroll = window.scrollY;
+    currentPosition = window.innerHeight + scroll;
+
+    if (currentPosition >= referenceBottom + 220) {
+        addContent();
+        console.log(currentPosition - referenceBottom);
+    }
+
+    if (currentPosition < referenceBottom) {
+        removeContent(count-1);
+    }
+
+})
 
 function addContent() {
     count++
@@ -59,11 +70,12 @@ function whatSide(current) {
 
 function removeContent(idx) {
     const allContent = document.querySelectorAll('.content');
-    let side = whatSide(idx+1);
-    count--    
+    let side = whatSide(idx+1); 
     allContent[idx].classList.remove(`show-${side}`);
+    count-- 
     setTimeout(function () {
         wrapper.removeChild(allContent[idx]);
+
     }, 500); //wait for the block of code to finish
 }
 
