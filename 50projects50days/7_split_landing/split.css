@@ -10,6 +10,11 @@ body {
 }
 
 .left {
+    background-image: url('content/corleto-peanut-butter-u256GzFi7Gw-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     flex-grow: 1;
     height: 100vh;
     margin: 0;
@@ -18,10 +23,30 @@ body {
 }
 
 .right {
+    background-image: url('content/micheile-henderson-SWyfzICySco-unsplash.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
     flex-grow: 1;
     height: 100vh;
     margin: 0;
     background-color: grey;
     transition: flex-grow 0.8s ease;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+
+}
+
+p, a {
+    color: #888;
+    opacity: 0.8;
+    align-self: flex-end;
 }
 
