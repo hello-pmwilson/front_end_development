@@ -1,4 +1,4 @@
-#50 Projects in 50 Days - Pending
+# 50 Projects in 50 Days - Pending
 
 Based on the [projects](https://50projects50days.com) designed by Brad Traversy and Florin Pop. 
 
