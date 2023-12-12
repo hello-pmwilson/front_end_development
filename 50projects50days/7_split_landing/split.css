@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    width: 100vw;
+}
+
+.left {
+    flex-grow: 1;
+    height: 100vh;
+    margin: 0;
+    background-color: aquamarine;
+    transition: flex-grow 0.8s ease;
+}
+
+.right {
+    flex-grow: 1;
+    height: 100vh;
+    margin: 0;
+    background-color: grey;
+    transition: flex-grow 0.8s ease;
+}
+
