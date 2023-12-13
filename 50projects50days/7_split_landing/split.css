@@ -10,7 +10,12 @@ body {
 }
 
 .left {
-    background-image: url('content/corleto-peanut-butter-u256GzFi7Gw-unsplash.jpg');
+    background-image: 
+        linear-gradient(
+            rgba(132, 87, 4, 0.5), 
+            rgba(132, 87, 4, 0.5)
+        ),
+        url('content/corleto-peanut-butter-u256GzFi7Gw-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -20,10 +25,21 @@ body {
     margin: 0;
     background-color: aquamarine;
     transition: width 0.8s ease;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .right {
-    background-image: url('content/micheile-henderson-SWyfzICySco-unsplash.jpg');
+    background-image: 
+        linear-gradient(
+            rgba(112, 6, 75, 0.4), 
+            rgba(112, 6, 75, 0.4)
+        ),
+        url('content/micheile-henderson-SWyfzICySco-unsplash.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -41,12 +57,30 @@ body {
 }
 
 h1 {
-
+    color: white;
 }
 
 p, a {
-    color: #888;
+    color: #e6e4e4;
     opacity: 0.8;
-    align-self: flex-end;
 }
 
+button {
+    border: solid white;
+    cursor: pointer;
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    color: white;
+    /* box-shadow: 5px 5px 5px lightgrey; */
+    font-weight: bold;
+}
+
+.left > button:hover {
+    background-color: rgba(132, 87, 4);
+    border: rgba(132, 87, 4);
+}
+.right > button:hover {
+    background-color: rgba(112, 6, 75);
+    border: rgba(112, 6, 75);
+}
