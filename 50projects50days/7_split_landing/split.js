@@ -17,23 +17,23 @@ function trackMouse(event) {
 
     if (mouseX <= screenWidth / 2) {
         //mouse is on the left
-        left.style.flexGrow = '3';
-        right.style.flexGrow = '1';
+        left.style.width = '75%';
+        right.style.width = '25%';
     } else if (mouseX >= screenWidth / 2) {
         //mouse is on the right
-        left.style.flexGrow = '1';        
-        right.style.flexGrow = '3';
+        left.style.width = '25%';        
+        right.style.width = '75%';
     } else {
-        left.style.flexGrow = '1';        
-        right.style.flexGrow = '1';
+        left.style.width = '50%';        
+        right.style.width = '50%';
     }
     
 }
 //end comment here
 
 document.addEventListener('mouseout', () => {
-    left.style.flexGrow = '1';        
-    right.style.flexGrow = '1';
+    left.style.width = '50%';        
+    right.style.width = '50%';
 })
 
 
@@ -41,11 +41,11 @@ document.addEventListener('mouseout', () => {
 
 // left.addEventListener('mouseover', () => {
 //     //mouse is on the left
-//     left.style.flexGrow = '3';
-//     right.style.flexGrow = '1';
+//     left.style.width = '75%';
+//     right.style.width = '25%';
 // })
 
 // right.addEventListener('mouseover', () => {
-//     left.style.flexGrow = '1';        
-//     right.style.flexGrow = '3';
+//     left.style.width = '25%';        
+//     right.style.width = '75%';
 // })
