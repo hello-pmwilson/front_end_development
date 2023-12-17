@@ -46,7 +46,11 @@ input {
     width: 80%;
     margin: auto;
     position: relative;
-    z-index: 0;
+    z-index: 1;
+}
+
+input:focus {
+    outline: none;
 }
 
 input:first-of-type {
@@ -55,7 +59,7 @@ input:first-of-type {
 
 label {
     position: absolute;
-    z-index: 1;
+    z-index: 0;
     font-size: large;
 }
 
@@ -103,4 +107,7 @@ a {
     color: #4682B4;
 }
 
+.translate {
+    transform: translateY(-30px);
+}
 
