@@ -96,6 +96,11 @@ button {
     margin: auto; 
     background-color: #ADD8E6;
     grid-row: 4;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.95);
 }
 
 P {
